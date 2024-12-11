@@ -2,11 +2,21 @@ package conta;
 
 import java.util.Scanner;
 
+import conta.model.Conta;
 import conta.util.Cores;
 
 public class Menu {
 
 	public static void main(String[] args) {
+		//Instanciamento
+		Conta c1 = new Conta(1, 123, 1, "Toninho Tornado", 500.0f);
+		c1.visualizar();
+		c1.sacar(1000.0f);
+		c1.visualizar();
+		c1.depositar(600.0f);
+		c1.visualizar();
+		
+		
 		Scanner leia = new Scanner(System.in);
 		int opcao;
 
@@ -35,7 +45,7 @@ public class Menu {
 			opcao = leia.nextInt();
 
 			if (opcao == 9) {
-				System.out.println(Cores.TEXT_WHITE_BOLD +"\nBanco do Brazil com Z - O seu Futuro começa aqui!");
+				System.out.println(Cores.TEXT_WHITE_BOLD +"\n Banco TIO Patinhas - Seu dinheiro bem investido");
 				sobre();
                  leia.close();
 				System.exit(0);
@@ -44,6 +54,7 @@ public class Menu {
 			switch (opcao) {
 				case 1:
 					System.out.println(Cores.TEXT_WHITE_BOLD +"Criar Conta\n\n");
+					c1.visualizar();
 
 					break;
 				case 2:
