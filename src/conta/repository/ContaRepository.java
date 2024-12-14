@@ -1,4 +1,4 @@
-package conta.resitory;
+package conta.repository;
 
 import conta.model.Conta;
 
