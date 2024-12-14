@@ -3,19 +3,36 @@ package conta;
 import java.util.Scanner;
 
 import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 import conta.util.Cores;
 
 public class Menu {
 
 	public static void main(String[] args) {
 		//Instanciamento
-		Conta c1 = new Conta(1, 123, 1, "Toninho Tornado", 500.0f);
-		c1.visualizar();
-		c1.sacar(1000.0f);
-		c1.visualizar();
-		c1.depositar(600.0f);
-		c1.visualizar();
+		/*
+			Conta c1 = new Conta(1, 123, 1, "Toninho Tornado", 500.0f);
+			c1.visualizar();
+			c1.sacar(1000.0f);
+			c1.visualizar();
+			c1.depositar(600.0f);
+			c1.visualizar();
+		*/
+		//conta corrente que define limite
+		Conta cc = new ContaCorrente(1, 123, 1, "Toninho Tornado", 500.0f , 200000f);
 		
+		//conta com limite fixo
+		Conta ccComLimiteAutomatico = new ContaCorrente(1, 123, 1, "Ozzy", 500f);
+		
+		ccComLimiteAutomatico.visualizar();
+		
+		ContaPoupanca cp1 = new ContaPoupanca(2, 123, 2, "Maria dos Santos", 100000.0f, 15);
+		cp1.visualizar();
+        cp1.sacar(1000.0f);
+		cp1.visualizar();
+		cp1.depositar(5000.0f);
+		cp1.visualizar();
 		
 		Scanner leia = new Scanner(System.in);
 		int opcao;
@@ -54,7 +71,7 @@ public class Menu {
 			switch (opcao) {
 				case 1:
 					System.out.println(Cores.TEXT_WHITE_BOLD +"Criar Conta\n\n");
-					c1.visualizar();
+					//c1.visualizar();
 
 					break;
 				case 2:

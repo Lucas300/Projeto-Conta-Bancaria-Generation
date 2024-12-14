@@ -1,6 +1,6 @@
 package conta.model;
-
-public class Conta {
+//por ser abstrata não pode ser instanciada, sera somente usada como modelo para as classes filhas
+public abstract class Conta {
 
 	/*
 	 * //MODIFICADORES DE ACESSO 
